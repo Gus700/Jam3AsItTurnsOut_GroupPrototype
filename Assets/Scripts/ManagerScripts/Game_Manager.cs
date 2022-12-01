@@ -47,9 +47,7 @@ public class Game_Manager : MonoBehaviour
             Player p = new()
             {
                 playerManager = pm,
-                name = pm.playerName,
-                units = pm.Units,
-                itsTurn = false
+                name = pm.playerName
             };
             
             // Add the new Player to the Player List _players
@@ -77,6 +75,7 @@ public class Game_Manager : MonoBehaviour
                 // Check if Game_Manager has not added this player to the PlayersDone list
                 if (!PlayersDone.Exists(x => x == currentPlayer.name))
                 {
+                    currentPlayer.playerManager.CanPlay = false;
                     PlayersDone.Add(currentPlayer.name);
                 }
             }
@@ -106,7 +105,7 @@ public class Game_Manager : MonoBehaviour
             // reset each player's conditions
             foreach (var player in Players)
             {
-                ResetActions(player.playerManager);
+                ResetPlayerStatus(player.playerManager);
             }
 
             // first player on the list starts the new round first
@@ -120,10 +119,9 @@ public class Game_Manager : MonoBehaviour
     /// This function was defined in Game_Manager to reiterate that
     /// the Game_Manager dictates when it is the player's turn.
     /// </summary>
-    private void ResetActions(Player_Manager pm)
+    private void ResetPlayerStatus(Player_Manager pm)
     {
-        pm.CanMove = true;
-        pm.CanShoot = true;
+        pm.ResetUnitActions();
         pm.FinishedTurn = false;
     }
 }
