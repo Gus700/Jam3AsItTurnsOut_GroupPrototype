@@ -18,8 +18,10 @@ public class Canon : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetButtonDown("Fire1"))
         {
+            // creat an instance of the bullet 
             Rigidbody2D bulletInstance = Instantiate(bullet, launchOffSet.position, weapon.rotation);
             Vector2 lookDirect = mousePos - (Vector2)weapon.position;
+            // add the directional position of the mouse cursor to the velocity of the buller rb
             bulletInstance.velocity = new Vector2(lookDirect.x * heavyShotShootForce, lookDirect.y *heavyShotShootForce);
         }
     }
