@@ -9,6 +9,7 @@ public class ScatterCanon : MonoBehaviour
     [SerializeField] private Transform launchOffSet;
     [SerializeField] private Rigidbody2D bullet;
     [SerializeField] private float heavyShotShootForce = 1f;
+    [SerializeField] private AudioSource shootingSfx;
     private Vector2 mousePos;
 
     public Unit_Manager um;
@@ -28,6 +29,7 @@ public class ScatterCanon : MonoBehaviour
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             if (Input.GetMouseButtonDown(mouseButton))
             {
+                shootingSfx.Play();
                 ScatterShot();
                 um.IncIndex();
             }

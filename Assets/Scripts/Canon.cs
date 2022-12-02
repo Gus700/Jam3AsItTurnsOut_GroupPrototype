@@ -9,6 +9,7 @@ public class Canon : MonoBehaviour
     [SerializeField] private Transform launchOffSet;
     [SerializeField] private Rigidbody2D bullet;
     [SerializeField] private float heavyShotShootForce = 1f;
+    [SerializeField] private AudioSource shootingSfx;
     private Vector2 mousePos;
 
     public Unit_Manager um;
@@ -28,6 +29,7 @@ public class Canon : MonoBehaviour
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             if (Input.GetMouseButtonDown(mouseButton))
             {
+                shootingSfx.Play();
                 // creat an instance of the bullet 
                 Rigidbody2D bulletInstance = Instantiate(bullet, launchOffSet.position, weapon.rotation);
                 Vector2 lookDirect = mousePos - (Vector2)weapon.position;
