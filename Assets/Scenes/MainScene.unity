@@ -544,6 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fb3e1a85a22bc4392c53139a6b76b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indicator: {fileID: 342774103}
   timer: {fileID: 1711002600}
   player: {fileID: 0}
   gm: {fileID: 0}
@@ -1359,7 +1360,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &862242117 stripped
 Transform:
@@ -1456,6 +1457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fb3e1a85a22bc4392c53139a6b76b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indicator: {fileID: 342774103}
   timer: {fileID: 1711002600}
   player: {fileID: 0}
   gm: {fileID: 0}
