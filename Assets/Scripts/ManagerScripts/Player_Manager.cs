@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Manager : MonoBehaviour
 {
+    [SerializeField] UnitIndicator indicator;
     [SerializeField] TurnClock timer;
     public GameObject player;
     public Game_Manager gm;
@@ -58,6 +59,12 @@ public class Player_Manager : MonoBehaviour
                 for (int i = 0; i < unitManagers.Count; i++)
                 {
                     unitManagers[i].unitMan.itsTurn = i == unitIndex;
+                    if (unitManagers[i].unitMan.itsTurn)
+                    {
+                        indicator.TargetActiveUnit(
+                            unitManagers[i].unitMan.gameObject.transform.position
+                        );
+                    } 
                 }
             }
             else
