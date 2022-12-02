@@ -27,8 +27,16 @@ public class Projectile : MonoBehaviour
         )
         {
             pm.score += 10;
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
+        if (!collider.gameObject.CompareTag(gameObject.tag))
+        {
+            Destroy(gameObject);
+        }
+        if (collider.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

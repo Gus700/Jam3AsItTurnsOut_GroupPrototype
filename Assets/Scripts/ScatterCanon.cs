@@ -14,10 +14,12 @@ public class ScatterCanon : MonoBehaviour
 
     public Unit_Manager um;
     public int mouseButton;
+    private Transform parent;
 
     private void Start()
     {
         um = GetComponentInParent<Unit_Manager>();
+        parent = transform.parent;
     }
 
     // Update is called once per frame
@@ -47,15 +49,15 @@ public class ScatterCanon : MonoBehaviour
     {
     Vector2 lookDirect = mousePos - (Vector2)weapon.position;
     // creat an instance of the bullet 
-    Rigidbody2D bulletInstance1 = Instantiate(bullet, launchOffSet.position, weapon.rotation);
+    Rigidbody2D bulletInstance1 = Instantiate(bullet, launchOffSet.position, weapon.rotation, parent.transform.parent);
     // add the directional position of the mouse cursor to the velocity of the buller rb
     bulletInstance1.velocity = new Vector2(lookDirect.x * heavyShotShootForce - 10, lookDirect.y * heavyShotShootForce);   
     // create an instance of the bullet 
-    Rigidbody2D bulletInstance2 = Instantiate(bullet, launchOffSet.position, weapon.rotation);
+    Rigidbody2D bulletInstance2 = Instantiate(bullet, launchOffSet.position, weapon.rotation, parent.transform.parent);
     // add the directional position of the mouse cursor to the velocity of the buller rb
     bulletInstance2.velocity = new Vector2(lookDirect.x * heavyShotShootForce, lookDirect.y * heavyShotShootForce);
     // creat an instance of the bullet 
-    Rigidbody2D bulletInstance3 = Instantiate(bullet, launchOffSet.position, weapon.rotation);
+    Rigidbody2D bulletInstance3 = Instantiate(bullet, launchOffSet.position, weapon.rotation, parent.transform.parent);
     // add the directional position of the mouse cursor to the velocity of the buller rb
     bulletInstance3.velocity = new Vector2(lookDirect.x * heavyShotShootForce + 10, lookDirect.y * heavyShotShootForce);
     

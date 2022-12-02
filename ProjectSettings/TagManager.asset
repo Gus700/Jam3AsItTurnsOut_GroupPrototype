@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Unit
   - Ground
+  - Raisin
+  - Spam
   layers:
   - Default
   - TransparentFX
