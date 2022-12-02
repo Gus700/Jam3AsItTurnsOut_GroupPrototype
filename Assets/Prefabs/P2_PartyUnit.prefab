@@ -111,7 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   itsTurn: 0
-  readyToShoot: 0
 --- !u!1 &2729368521835122544
 GameObject:
   m_ObjectHideFlags: 0

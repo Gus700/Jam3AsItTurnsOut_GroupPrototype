@@ -10,40 +10,35 @@ public class Game_Manager : MonoBehaviour
 {
     public List<GameObject> players;
 
-    public List<GameObject> units;
-
-    public List<Unit_Manager> unitManagers;
+    public List<(
+        GameObject unit, 
+        Unit_Manager unitMan
+    )> unitManagers;
 
     public int unitIndex;
 
     private void Start()
     {
-        units = new();
+        unitManagers = new();
         unitIndex = 0;
 
         foreach (var player in players)
         {
             foreach (Transform child in player.transform)
             {
-                units.Add(child.gameObject);
+                unitManagers.Add((
+                    child.gameObject, 
+                    child.GetComponent<Unit_Manager>()
+                ));
             }
         }
     }
 
     private void Update()
     {
-        //units[playerIndex].GetComponent<Unit_Manager>().itsTurn = true;
-
         for (int i = 0; i < unitManagers.Count; i++)
         {
-            if (i == unitIndex)
-            {
-                unitManagers[i].itsTurn = true;
-            }
-            else
-            {
-                unitManagers[i].itsTurn = false;
-            }
+            unitManagers[i].unitMan.itsTurn = i == unitIndex;
         }
     }
 }
