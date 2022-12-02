@@ -13,10 +13,12 @@ public class Canon : MonoBehaviour
 
     public Unit_Manager um;
     public int mouseButton;
+    private Transform parent;
 
     private void Start()
     {
         um = GetComponentInParent<Unit_Manager>();
+        parent = transform.parent;
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class Canon : MonoBehaviour
             if (Input.GetMouseButtonDown(mouseButton))
             {
                 // creat an instance of the bullet 
-                Rigidbody2D bulletInstance = Instantiate(bullet, launchOffSet.position, weapon.rotation);
+                Rigidbody2D bulletInstance = Instantiate(bullet, launchOffSet.position, weapon.rotation, parent.transform.parent);
                 Vector2 lookDirect = mousePos - (Vector2)weapon.position;
                 // add the directional position of the mouse cursor to the velocity of the buller rb
                 bulletInstance.velocity = new Vector2(lookDirect.x * heavyShotShootForce, lookDirect.y * heavyShotShootForce);
