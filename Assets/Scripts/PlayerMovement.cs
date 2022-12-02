@@ -11,18 +11,20 @@ public class PlayerMovement : MonoBehaviour
     private bool faceSide = true;
 
     [SerializeField] private Rigidbody2D rb;
-    // Start is called before the first frame update
-    void Start()
+
+    Unit_Manager um;
+
+    private void Start()
     {
-        
+        um = GetComponent<Unit_Manager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // get the keyboard input
-        horizontal = Input.GetAxisRaw("Horizontal");
-
+        horizontal = um.itsTurn ? Input.GetAxisRaw("Horizontal") : 0;
+       
     }
 
     // takes care of mthe player's movement

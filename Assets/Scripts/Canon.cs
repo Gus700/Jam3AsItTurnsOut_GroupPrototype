@@ -11,18 +11,31 @@ public class Canon : MonoBehaviour
     [SerializeField] private float heavyShotShootForce = 1f;
     private Vector2 mousePos;
 
+    public Unit_Manager um;
+    public int mouseButton;
+
+    private void Start()
+    {
+        um = GetComponentInParent<Unit_Manager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        // vector that gives the position of the mouse cursor
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetButtonDown("Fire1"))
+        if (um.itsTurn)
         {
-            // creat an instance of the bullet 
-            Rigidbody2D bulletInstance = Instantiate(bullet, launchOffSet.position, weapon.rotation);
-            Vector2 lookDirect = mousePos - (Vector2)weapon.position;
-            // add the directional position of the mouse cursor to the velocity of the buller rb
-            bulletInstance.velocity = new Vector2(lookDirect.x * heavyShotShootForce, lookDirect.y *heavyShotShootForce);
+            // vector that gives the position of the mouse cursor
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            if (Input.GetMouseButtonDown(mouseButton))
+            {
+                // creat an instance of the bullet 
+                Rigidbody2D bulletInstance = Instantiate(bullet, launchOffSet.position, weapon.rotation);
+                Vector2 lookDirect = mousePos - (Vector2)weapon.position;
+                // add the directional position of the mouse cursor to the velocity of the buller rb
+                bulletInstance.velocity = new Vector2(lookDirect.x * heavyShotShootForce, lookDirect.y * heavyShotShootForce);
+                
+                um.IncIndex();
+            }
         }
     }
 
