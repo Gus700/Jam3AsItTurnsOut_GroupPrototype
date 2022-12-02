@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Unit_Manager : MonoBehaviour
 {
-    public Game_Manager gm;
+    public Player_Manager pm;
     public bool itsTurn;
 
     private void Start()
     {
-        gm = GetComponentInParent<Game_Manager>();
+        pm = GetComponentInParent<Player_Manager>();
         itsTurn = false;
     }
 
     public void IncIndex()
     {
-        gm.unitIndex = (gm.unitIndex + 1) % gm.unitManagers.Count;
+        //pm.unitIndex = (pm.unitIndex + 1) % pm.unitManagers.Count;
+        itsTurn = false;
+        pm.unitIndex++;
     }
 }

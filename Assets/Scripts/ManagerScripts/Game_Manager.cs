@@ -9,20 +9,29 @@ using UnityEngine;
 public class Game_Manager : MonoBehaviour
 {
     public List<GameObject> players;
+    public int P1score;
+    public int P2score;
+    public float turnTime;
 
-    public List<(
-        GameObject unit, 
-        Unit_Manager unitMan
-    )> unitManagers;
+    public List<Player_Manager> playerManagers;
 
-    public int unitIndex;
+    public int playerIndex;
+    //public int unitIndex;
 
     private void Start()
     {
-        unitManagers = new();
-        unitIndex = 0;
+        P1score = 0;
+        P2score = 0;
+        playerManagers = new();
+        //unitManagers = new();
+        playerIndex = 0;
+        //unitIndex = 0;
 
         foreach (var player in players)
+        {
+            playerManagers.Add(player.GetComponent<Player_Manager>());
+        }
+        /*foreach (var player in players)
         {
             foreach (Transform child in player.transform)
             {
@@ -31,14 +40,15 @@ public class Game_Manager : MonoBehaviour
                     child.GetComponent<Unit_Manager>()
                 ));
             }
-        }
+        }*/
     }
 
     private void Update()
     {
-        for (int i = 0; i < unitManagers.Count; i++)
+        for (int i = 0; i < players.Count; i++)
         {
-            unitManagers[i].unitMan.itsTurn = i == unitIndex;
+            playerManagers[i].playerTurn = i == playerIndex;
+            //unitManagers[i].unitMan.itsTurn = i == unitIndex;
         }
     }
 }
