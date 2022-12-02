@@ -51,6 +51,7 @@ MonoBehaviour:
   launchOffSet: {fileID: 800506926167380494}
   bullet: {fileID: 9066005583813549030, guid: 1fc46a1e99d1b1b48af358923439f2bd, type: 3}
   heavyShotShootForce: 1
+  shootingSfx: {fileID: 0}
   um: {fileID: 0}
   mouseButton: 1
 --- !u!1 &800506925551366634
@@ -188,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800506926167380493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.62, y: 0.001, z: 0}
+  m_LocalPosition: {x: 2.34, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

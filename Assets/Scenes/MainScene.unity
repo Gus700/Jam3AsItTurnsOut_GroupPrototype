@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3ee996ac8207648b50c113131afb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pm: {fileID: 1954399311}
+  pm: {fileID: 407645438}
   playerName: 
   _playerScore: {fileID: 431367557}
   score: 0
@@ -857,10 +857,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 2451633226839283576, guid: 87c354385f021a8479f324ae8cdbae12, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 5902590982124694937, guid: 6ef3d26e6ce4e8641922e662bc744cd2, type: 3}
     - target: {fileID: 2451633226839283576, guid: 87c354385f021a8479f324ae8cdbae12, type: 3}
       propertyPath: shootingSfx
       value: 
@@ -1049,10 +1045,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 4013499717029094516, guid: 7e5dce1ea8697dc4c8bc1eb435b82468, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 5902590982124694937, guid: 6ef3d26e6ce4e8641922e662bc744cd2, type: 3}
     - target: {fileID: 4013499717029094516, guid: 7e5dce1ea8697dc4c8bc1eb435b82468, type: 3}
       propertyPath: shootingSfx
       value: 
@@ -2107,8 +2099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players:
-  - {fileID: 361960099}
-  - {fileID: 1954399311}
+  - {fileID: 1185651150}
+  - {fileID: 407645438}
   _timerText: {fileID: 1711002601}
 --- !u!114 &1711002601
 MonoBehaviour:
@@ -2258,7 +2250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3ee996ac8207648b50c113131afb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pm: {fileID: 361960099}
+  pm: {fileID: 1185651150}
   playerName: 
   _playerScore: {fileID: 1768684895}
   score: 0
