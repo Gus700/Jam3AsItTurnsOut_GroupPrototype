@@ -15,7 +15,6 @@ public class Unit_Manager : MonoBehaviour
 
     public void IncIndex()
     {
-        //pm.unitIndex = (pm.unitIndex + 1) % pm.unitManagers.Count;
         itsTurn = false;
         pm.unitIndex++;
     }

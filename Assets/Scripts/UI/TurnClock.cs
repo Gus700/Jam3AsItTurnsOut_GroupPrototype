@@ -5,8 +5,12 @@ using TMPro;
 
 public class TurnClock : MonoBehaviour
 {
+    [Tooltip("Insert all players into this list")]
     [SerializeField] List<Player_Manager> players;
+
+    [Tooltip("The TMP gameObject")]
     [SerializeField] TextMeshProUGUI _timerText;
+
     private string _playerName;
     private float _time;
 
